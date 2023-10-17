@@ -14,39 +14,58 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 <style>
 
-
-
-form {
-
+body {
+	font-family: sans-serif;
+	font-size: 14px;
 }
 
-input[type="text"] {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #cccccc;
-  border-radius: 5px;
+h2 {
+	font-size: 20px;
+	font-weight: bold;
 }
 
-textarea {
-  width: 100%;
-  height: 200px;
-  padding: 10px;
-  border: 1px solid #cccccc;
-  border-radius: 5px;
+.container {
+	margin-top: 30px;
 }
 
+.form-group {
+	margin-bottom: 20px;
+}
+
+.form-control {
+	border-radius: 0;
+	box-shadow: none;
+	font-size: 14px;
+}
+
+.btn-primary {
+	border-radius: 0;
+	box-shadow: none;
+	color: #fff;
+	background-color: #007bff;
+}
+
+.btn-primary:hover {
+	background-color: #0069d9;
+}
+
+.fixed-button {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+}
 </style>
 <script src="https://code.jquery.com/jquery.min.js"></script>
 <script>
 	$(document).ready(function() {
-		$("#btnSave").click(function(){
+		$("#btnSave").click(function() {
 			//var title = document.form1.title.value; ==> name속성으로 처리할 경우
 			//var content = document.form1.content.value;
 			//var writer = document.form1.writer.value;
 			var title = $("#title").val();
 			var content = $("#content").val();
 			var writer = $("#writer").val();
-			
+
 			if (title === null || title == "") {
 				alert("제목을 입력하세요.");
 				document.form1.title.focus();
@@ -70,16 +89,16 @@ textarea {
 </head>
 
 <body>
-	<h2 style="font-size:15px; font-weight: bold;">게시글 작성</h2>
+	<h2 style="font-size: 15px; font-weight: bold;">게시글 작성</h2>
 	<form name="form1" method="post" action="${path}/Board/insert.do">
 		<div>
-			<input name="title" id="title" size="80" placeholder="제목을 입력해주세요">
+			<input name="title" id="title" size="100" placeholder="제목을 입력해주세요">
 		</div>
 		<div>
 			<textarea name="content" id="content" rows="4" cols="80"
 				placeholder="내용을 입력해주세요"></textarea>
 		</div>
-		
+
 		<div>
 			닉네임 <input name="writer" id="writer" placeholder="닉네임을 입력해주세요">
 		</div>
