@@ -46,6 +46,7 @@ public class BoardDaoImpl implements BoardDao {
     public void increaseViewcnt(int bno) throws Exception {
         sqlSession.update("board.increaseViewcnt", bno);
     }
+    
 
 }
 

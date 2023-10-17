@@ -19,4 +19,5 @@ public interface BoardService {
     public List<BoardVo> listAll() throws Exception;
     // 06. 게시글 조회
     public void increaseViewcnt(int bno, HttpSession session) throws Exception;
+    
 }

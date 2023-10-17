@@ -1,6 +1,6 @@
 package com.quocar.board.vo;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class BoardVo {
 	private int 	bno; 		// 게시글 번호

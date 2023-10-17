@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>게시글 등록</title>
+<title>QuoCar</title>
 <jsp:include page="/WEB-INF/views/include/header.jsp" />
 <link rel="shortcut icon" href="/img/쿼카얼굴.ico">
 <link rel="stylesheet" href="/css/common.css" />

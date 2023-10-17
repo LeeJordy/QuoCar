@@ -1,46 +1,6 @@
 @charset "UTF-8";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
 
-footer {
-   position: fixed; /* 화면 아래에 고정 */
-   left: 0;
-   bottom: 0;
-   width: 100%; /* 전체 너비로 확장 */
-   background-color: #333; /* 배경색 지정 (원하는 색상으로 변경) */
-   color: #fff; /* 글자색 지정 (원하는 색상으로 변경) */
-   text-align: center; /* 텍스트 가운데 정렬 */
-   padding: 10px 0; /* 상하 여백 설정 */
-}
-
-.horizontal-items {
-    display: flex;
-    flex-direction: row; /* 수평으로 배치하려면 행 방향으로 설정 */
-}
-
-.horizontal-items h2 {
-    margin-right: 20px; /* 엔진오일과 타이어 사이에 간격을 설정하세요. */
-}
-
-.horizontal-center {
-    display: flex;
-    justify-content: space-between; /* 왼쪽과 오른쪽에 공간을 나누어 배치 */
-    align-items: center; /* 수직 중앙 정렬 */
-}
-
-.item-left,
-.item-right {
-    flex: 50; /* 동일한 너비로 설정 */
-    text-align: center; /* 가운데 정렬 */
-    margin: 0 10px;
-}
-
-/* 엔진오일과 타이어의 브레이크 글자 스타일 수정 */
-.item-left a,
-.item-right a {
-    font-size: 24px; /* 원하는 크기로 설정하세요. */
-    color: black; /* 검은색으로 설정 */
-    text-decoration: none; /* 밑줄 제거 */
-}
 
 /*  전체 적용 스타일 */
 *      { margin:0;  padding:0;  }
@@ -52,10 +12,13 @@ table  { border-collapse : collapse; border-spacing : 0; }
   /* 홈로고 스타일 */
  a [alt="QUOCAR"] {
    position: absolute;
+   padding: 30px 50px;
    left: 10vw;
    width: 100px;
    height: auto;
 } 
+
+
 
 /* 메뉴 header, footer   */
 
@@ -75,8 +38,19 @@ color: #133D86;
 .category a:hover  { background:#52B755; }
 .footer       { text-transform : uppercase; text-align: center; font-size: 11px;
                 background: #666; color:#fff; padding:20px 0;    }
+ footer {
+   position: fixed; /* 화면 아래에 고정 */
+   left: 0;
+   bottom: 0;
+   width: 100%; /* 전체 너비로 확장 */
+   background-color: #333; /* 배경색 지정 (원하는 색상으로 변경) */
+   color: #fff; /* 글자색 지정 (원하는 색상으로 변경) */
+   text-align: center; /* 텍스트 가운데 정렬 */
+   padding: 10px 0; /* 상하 여백 설정 */
+}
                 
 /* 본문 스타일 */
+
 .container      {  background:#FFFFFF; padding:50px;  }
 .content        {  width:800px; margin:0 auto; background:#fff; padding:20px; font-size:13px; } 
 .content  h2    {  margin-bottom: 20px; text-align: center; }                 
@@ -96,16 +70,3 @@ color: #133D86;
                     background: #444; color:#fff;  }
                     
 /* 중복체크 버튼 */
-
-.fixed-button {
-	position: fixed;
-	font-size: 25px;
-	bottom: 80px; /* 위에서 20px 거리에 고정 */
-	right: 60px; /* 오른쪽에서 20px 거리에 고정 */
-	padding: 30px 30px;
-	border: none;
-	border-radius: 8px;
-	cursor: pointer;
-
-
-}

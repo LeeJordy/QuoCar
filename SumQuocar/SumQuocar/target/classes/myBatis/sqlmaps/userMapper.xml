@@ -25,7 +25,7 @@
    	         , PASSWD
    	         , USERNAME
    	         , EMAIL
-   	         , TO_CHAR(INDATE, 'YYYY-MM-DD HH24:MI:SS')  INDATE
+   	         , TO_CHAR(INDATE, 'MM-DD HH24:MI')  INDATE
    	    FROM   TUSER
    	    WHERE  USERID = #{ userid }  
       

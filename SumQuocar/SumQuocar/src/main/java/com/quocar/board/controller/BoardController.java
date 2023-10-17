@@ -65,6 +65,7 @@ public class BoardController {
         return mav;
     }
     
+    
     // 04. 게시글 수정
     // 폼에서 입력한 내용들은 @ModelAttribute BoardVO vo로 전달됨
     @RequestMapping(value="update.do", method=RequestMethod.POST)
@@ -80,18 +81,18 @@ public class BoardController {
         return "redirect:List";
     }
     
+    // 06. 게시글 수정글로 넘어가기
+    @RequestMapping(value = "/updateform.do", method = RequestMethod.GET)
+    public ModelAndView updateForm(@RequestParam int bno) throws Exception {
+    	// Retrieve the existing post's details
+    	BoardVo boardVo = boardService.read(bno);
+    	
+    	// Create a ModelAndView to send data to the update.jsp page
+    	ModelAndView mav = new ModelAndView();
+    	mav.setViewName("board/update"); // Assuming your update.jsp is in the "board" directory
+    	mav.addObject("dto", boardVo); // Pass the post details to the view
+    	return mav;
+    }
+    
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

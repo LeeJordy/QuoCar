@@ -1,97 +1,58 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>게시글 내용보기</title>
+<title>QuoCar</title>
 <jsp:include page="/WEB-INF/views/include/header.jsp" />
 <link rel="shortcut icon" href="/img/쿼카얼굴.ico">
 <link rel="stylesheet" href="/css/common.css" />
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 
 <style>
 </style>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <script>
-    $(document).ready(function(){
-        $("#btnDelete").click(function(){
-            if(confirm("삭제하시겠습니까?")){
-                document.form1.action = "/Board/delete.do";
-                document.form1.submit();
-            }
-        });
-        
-        $("#btnUpdete").click(function(){
-            //var title = document.form1.title.value; ==> name속성으로 처리할 경우
-            //var content = document.form1.content.value;
-            //var writer = document.form1.writer.value;
-            var title = $("#title").val();
-            var content = $("#content").val();
-            var writer = $("#writer").val();
-            if(title == ""){
-                alert("제목을 입력하세요");
-                document.form1.title.focus();
-                return;
-            }
-            if(content == ""){
-                alert("내용을 입력하세요");
-                document.form1.content.focus();
-                return;
-            }
-            if(writer == ""){
-                alert("이름을 입력하세요");
-                document.form1.writer.focus();
-                return;
-            }
-            document.form1.action="/Board/update.do"
-            // 폼에 입력한 데이터를 서버로 전송
-            document.form1.submit();
-        });
-    });
+	$(document).ready(function() {
+		$("#btnUpdeteform").click(function() {
+			// 페이지 주소 변경(이동)
+			location.href = "${path}/Board/updateform.do";
+		});
+	});
 </script>
 </head>
 <body>
 
-<h2>게시글 보기</h2>
-<form name="form1" method="post">
-    <div>        <!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 -->
-        작성일자 : <fmt:formatDate value="${dto.regdate}" pattern="MM-dd a HH:mm"/>
-                <!-- 날짜 형식 => yyyy 4자리연도, MM 월, dd 일, a 오전/오후, HH 24시간제, hh 12시간제, mm 분, ss 초 -->
-    </div>
-    <div>
-        조회수 : ${dto.viewcnt}
-    </div>
-    <div>
-        제목
-        <input name="title" id="title" size="80" value="${dto.title}" placeholder="제목을 입력해주세요">
-    </div>
-    <div>
-        내용
-        <textarea name="content" id="content" rows="4" cols="80" placeholder="내용을 입력해주세요">${dto.content}</textarea>
-    </div>
-    <div>
-        이름
-        <input name="writer" id="writer" value="${dto.writer}" placeholder="이름을 입력해주세요">
-    </div>
-    <div style="width:650px; text-align: center;">
-        <!-- 게시물번호를 hidden으로 처리 -->
-        <input  type="hidden" name="bno" value="${dto.bno}">
-        <button type="button" id="btnUpdete">수정</button>
-        <button type="button" id="btnDelete">삭제</button>
-    </div>
-</form>
-  <jsp:include page="/WEB-INF/views/include/footer.jsp" />
+	<form name="form1" method="post">
+		<div class="card">
+			<div class="card-body">
+				<!-- 제목 -->
+				<h3 style="color:rgb(184, 43, 42);" class="card-title">${dto.title}</h3>
+				<!-- 날짜 -->
+				<div class="row row-cols-3 row-cols-lg-5 g-2 g-lg-3"">
+					<div class="col">작성일 :${dto.regdate}</div>
+					<div class="col">조회수 : ${dto.viewcnt}</div>
+					<div class="col">이 름 : ${dto.writer}</div>
+				</div>
+				<!-- 내용 -->
+				<p class="card-text border bg-light">${dto.content}</p>
+			</div>
+			<div style="width: 650px; text-align: center;"></div>
+			<div>
+				<!-- 게시물번호를 hidden으로 처리 -->
+				<!-- <input type="hidden" name="bno" value="${dto.bno}">  -->
+				<a class="btn btn-primary btn-sm"
+					href="${path}/Board/updateform.do?bno=${dto.bno}">수정</a>
+			</div>
+		</div>
+
+	</form>
+	<jsp:include page="/WEB-INF/views/include/footer.jsp" />
 </body>
 </html>
-
-
-
-
-
-
-
 
