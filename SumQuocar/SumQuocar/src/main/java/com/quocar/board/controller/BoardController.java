@@ -46,7 +46,7 @@ public class BoardController {
     @RequestMapping(value="insert.do", method=RequestMethod.POST)
     public String insert(@ModelAttribute BoardVo vo) throws Exception{
         boardService.create(vo);
-        return "redirect:List.do";
+        return "redirect:List";
     }
     
     // 03. 게시글 상세내용 조회, 게시글 조회수 증가 처리

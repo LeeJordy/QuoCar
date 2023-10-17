@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +31,7 @@
 </head>
 <body>
 	<button type="button" class="btn btn-danger" id="btnWrite">글쓰기</button>
-	<table border="1" width="600px">
+	<table>
 		<tr>
 			<th>번호</th>
 			<th>제목</th>
@@ -45,8 +45,8 @@
 				<td><a href="${path}/Board/view.do?bno=${row.bno}">${row.title}</a></td>
 				<td>${row.writer}</td>
 				<td>
-					<!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 --> 
-					<fmt:formatDate	value="${row.regdate}" pattern="MM-dd HH:mm" />
+					<!-- 원하는 날짜형식으로 출력하기 위해 fmt태그 사용 --> <fmt:formatDate
+						value="${row.regdate}" pattern="MM-dd HH:mm"/>
 				</td>
 				<td>${row.viewcnt}</td>
 			</tr>

@@ -1,14 +1,14 @@
 package com.quocar.board.vo;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class BoardVo {
-	private int bno; 		// 게시글 번호
-	private String title; 	// 게시글 제목
-	private String content; // 게시글 내용
-	private String writer; 	// 게시글 작성자
-	private Date regdate; 	// 게시글 작성일자 util.Date
-	private int viewcnt; 	// 게시글 조회수
+	private int 	bno; 		// 게시글 번호
+	private String 	title; 	// 게시글 제목
+	private String 	content; // 게시글 내용
+	private String	writer; 	// 게시글 작성자
+	private Date 	regdate; 	// 게시글 작성일자 util.Date
+	private int 	viewcnt; 	// 게시글 조회수
 
 	// Getter/Setter
 	public int getBno() {
