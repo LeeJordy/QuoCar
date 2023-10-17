@@ -70,14 +70,14 @@ public class BoardController {
     @RequestMapping(value="update.do", method=RequestMethod.POST)
     public String update(@ModelAttribute BoardVo vo) throws Exception{
         boardService.update(vo);
-        return "redirect:list.do";
+        return "redirect:List";
     }
     
     // 05. 게시글 삭제
     @RequestMapping("delete.do")
     public String delete(@RequestParam int bno) throws Exception{
         boardService.delete(bno);
-        return "redirect:List.do";
+        return "redirect:List";
     }
     
 

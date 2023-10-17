@@ -14,8 +14,8 @@
 
    #table  th        { width : 20%;  }  
    #table  td        { width : 80%;  }  
-   input[type=text]  { width : 100%; }
-   textarea          { width : 100%; height : 400px; padding:10px;} 
+   
+  
       
 </style>
 
